@@ -1,0 +1,19 @@
+version: "3"
+services:
+  gitlab:
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://gitlab.vcs/'
+    image: chifleytech/gitlab-demo
+    ports:
+    - "80:80"
+    logging:
+      driver: awslogs
+      options:
+        awslogs-group: gitlab
+        awslogs-region: ${REGION}
+        awslogs-stream-prefix: gitlab
+    volumes:
+      - /home/ec2-user/data/gitlab/config:/etc/gitlab
+      - /home/ec2-user/data/gitlab/logs:/var/log/gitlab
+      - /home/ec2-user/data/gitlab/data:/var/opt/gitlab

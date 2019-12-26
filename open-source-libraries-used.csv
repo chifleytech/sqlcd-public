@@ -1,0 +1,43 @@
+group: 'org.scala-lang', name: 'scala-library', version: '2.12.7', licence: 'http://www.apache.org/licenses/LICENSE-2.0'
+group: 'org.scala-lang', name: 'scala-reflect', version: '2.12.7', licence: 'http://www.apache.org/licenses/LICENSE-2.0'
+group: 'com.nimbusds', name: 'nimbus-jose-jwt, version: '4.11', licence: 'http://www.apache.org/licenses/LICENSE-2.0'
+group: 'org.apache.commons', name: 'commons-lang3, version: '3.4', licence: 'http://www.apache.org/licenses/LICENSE-2.0'
+group: 'com.nimbusds', name: 'nimbus-jose-jwt, version: '4.11', licence: 'http://www.apache.org/licenses/LICENSE-2.0'
+group: 'com.zaxxer, name: 'HikariCP, version: '2.6.1', licence: 'http://www.apache.org/licenses/LICENSE-2.0'
+group: 'commons-io', name: 'commons-io', version: '2.6', licence: 'http://www.apache.org/licenses/LICENSE-2.0'
+group: 'org.eclipse.jgit', name: 'org.eclipse.jgit', version: '4.11.0.201803080745-r', licence: 'http://www.eclipse.org/org/documents/edl-v10.php'
+group: 'commons-codec', name: 'commons-codec', version: '1.11', licence: 'http://www.apache.org/licenses/LICENSE-2.0'
+group: 'com.typesafe.akka', name: 'akka-actor_2.12', version: '2.5.12', licence: 'http://www.apache.org/licenses/LICENSE-2.0'
+group: 'com.typesafe.akka', name: 'akka-http_2.12',   version: '10.1.1', licence: 'http://www.apache.org/licenses/LICENSE-2.0'
+group: 'com.typesafe.akka', name: 'akka-stream_2.12', version: '2.5.11', licence: 'http://www.apache.org/licenses/LICENSE-2.0'
+group: 'com.typesafe.akka', name: 'akka-persistence_2.12', version: '2.5.12', licence: 'http://www.apache.org/licenses/LICENSE-2.0'
+group: 'com.typesafe.akka', name: 'akka-slf4j_2.12', version: '2.5.12', licence: 'http://www.apache.org/licenses/LICENSE-2.0'
+group: 'com.h2database', name: 'h2', version: '1.4.197', licence: 'https://opensource.org/licenses/EPL-1.0'
+group: 'com.typesafe.akka', name: 'akka-http-spray-json_2.12', version: '10.1.1', licence: 'http://www.apache.org/licenses/LICENSE-2.0'
+group: 'org.apache.commons', name: 'commons-text', version: '1.3', licence: 'http://www.apache.org/licenses/LICENSE-2.0'
+group: 'javax.mail', name: 'javax.mail-api', version: '1.6.2', licence: 'https://javaee.github.io/javamail/LICENSE'
+group: 'com.sun.mail', name: 'javax.mail', version: '1.6.2', licence: 'https://javaee.github.io/javamail/LICENSE'
+group: 'org.slf4j', name: 'slf4j-api', version: '1.7.26', licence: 'https://opensource.org/licenses/mit-license.php'
+group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3', licence: 'http://www.eclipse.org/legal/epl-v10.html'
+group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3', licence: 'http://www.eclipse.org/legal/epl-v10.html'
+
+library: "NPM Node", licence: "https://www.npmjs.com/policies/npm-license"
+library: "@material-ui/core", version: "^3.6.2", license: "https://opensource.org/licenses/mit-license.php"
+library: "@material-ui/icons", version: "^3.0.1", license: "https://opensource.org/licenses/mit-license.php"
+library: "@material/fab", version: "^0.42.0", license: "https://opensource.org/licenses/mit-license.php"
+library: "@material/react-fab", version: "^0.7.1", license: "https://opensource.org/licenses/mit-license.php"
+library: "axios", version: "^0.18.0", license:  "https://opensource.org/licenses/mit-license.php"
+library: "crypto-js", version: "^3.1.9-1", license:  "https://opensource.org/licenses/mit-license.php"
+library: "d3", version: "^3.5.17", license:  "https://github.com/d3/d3/blob/master/LICENSE"
+library: "http-proxy", version: "^1.17.0", license:  "https://opensource.org/licenses/mit-license.php"
+library: "javascript-time-ago", version: "^2.0.1", license:  "https://opensource.org/licenses/mit-license.php"
+library: "memoize-one", version: "^5.0.2", license:  "https://opensource.org/licenses/mit-license.php"
+library: "npm", version: "^6.9.0", license:  "https://github.com/npm/cli/blob/latest/LICENSE"
+library: "numeral", version: "^2.0.6", license:  "https://opensource.org/licenses/mit-license.php"
+library: "react", version: "^16.7.0", license:  "https://opensource.org/licenses/mit-license.php"
+library: "react-dom", version: "^16.6.3", license:  "https://opensource.org/licenses/mit-license.php"
+library: "react-interval", version: "^2.0.2", license:  "https://opensource.org/licenses/mit-license.php"
+library: "react-scripts", version: "2.1.1", license:  "https://opensource.org/licenses/mit-license.php"
+library: "react-syntax-highlighter", version: "^10.1.2", license:  "https://opensource.org/licenses/mit-license.php"
+library: "typeface-roboto", version: "0.0.54", license:  "https://opensource.org/licenses/mit-license.php"
+library: "webcola", version: "^3.3.8": "https://opensource.org/licenses/mit-license.php"

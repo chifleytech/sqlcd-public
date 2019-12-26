@@ -1,0 +1,27 @@
+version: "3"
+services:
+  worker:
+    image: chifleytech/spark-demo
+    ports:
+      - "8081:8081"
+    command: worker.sh
+    environment:
+      MASTER: spark://master.spark:7077
+      SPARK_CONF_DIR: /conf
+      SPARK_WORKER_CORES: 4
+      SPARK_WORKER_MEMORY: 15g
+      SPARK_WORKER_PORT: 8881
+      SPARK_WORKER_WEBUI_PORT: 8081
+      SPARK_PUBLIC_DNS: worker.spark
+    logging:
+      driver: awslogs
+      options:
+        awslogs-group: spark-worker
+        awslogs-region: ${REGION}
+        awslogs-stream-prefix: spark-worker
+    volumes:
+      - /home/ec2-user/data/spark/internal/worker/conf:/conf
+      - /home/ec2-user/data/spark/internal/worker/data:/tmp/data
+      - /home/ec2-user/data/spark/internal/worker/logs:/usr/spark-2.4.3/logs
+      - /home/ec2-user/data/spark/internal/worker/data:/data
+      - /home/ec2-user/data/spark/internal/worker/udf:/udf

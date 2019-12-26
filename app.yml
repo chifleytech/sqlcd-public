@@ -1,0 +1,32 @@
+version: '3'
+services:
+  backend:
+    image: chifleytech/sqlcd-service
+    environment:
+    - HOSTNAME=app.sqlcd
+    - TZ=Australia/Sydney
+    - LOG_LEVEL=INFO
+    - SQLCD_HOME=/root
+    - JRE_HOME=/usr/local/openjdk-8/jre
+    logging:
+      driver: awslogs
+      options:
+        awslogs-group: sqlcd-backend
+        awslogs-region: ${REGION}
+        awslogs-stream-prefix: sqlcd-backend
+  frontend:
+    image: chifleytech/sqlcd-ui
+    ports:
+      - "80:80"
+    environment:
+      - PROXY_LISTEN_PORT=80
+      - PROXY_BACKEND=localhost:7080
+      - PROXY_FRONTEND=localhost:5000
+      - PORT=5000
+      - REACT_APP_DEMO="cloud"
+    logging:
+      driver: awslogs
+      options:
+        awslogs-group: sqlcd-frontend
+        awslogs-region: ${REGION}
+        awslogs-stream-prefix: sqlcd-frontend

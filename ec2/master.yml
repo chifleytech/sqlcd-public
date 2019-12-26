@@ -1,0 +1,29 @@
+version: "3"
+services:
+  master:
+    image: chifleytech/spark-demo
+    ports:
+      - "8080:8080"
+    command: master.sh
+    environment:
+      DNS_WAIT: 60s
+      MASTER: spark://master.spark:7077
+      HOSTNAME: master.spark
+      SPARK_CONF_DIR: /conf
+      SPARK_PUBLIC_DNS: master.spark
+    logging:
+      driver: awslogs
+      options:
+        awslogs-group: spark-master
+        awslogs-region: ${REGION}
+        awslogs-stream-prefix: spark-master
+    volumes:
+      - /home/ec2-user/data/spark/internal/hdfs:/tmp/hadoop-root
+      - /home/ec2-user/data/spark/internal/hive:/tmp/hive
+      - /home/ec2-user/data/spark/internal/master/spark-warehouse:/usr/spark-2.4.3/spark-warehouse
+      - /home/ec2-user/data/spark/internal/master/data:/tmp/data
+      - /home/ec2-user/data/spark/internal/master/events:/tmp/spark-events
+      - /home/ec2-user/data/spark/internal/master/logs/spark:/usr/spark-2.4.3/logs
+      - /home/ec2-user/data/spark/internal/master/logs/hadoop:/usr/hadoop-3.2.0/logs
+      - /home/ec2-user/data/spark/data:/data
+      - /home/ec2-user/data/spark/udf:/udf

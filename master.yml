@@ -1,0 +1,20 @@
+version: "3"
+services:
+  master:
+    image: chifleytech/spark-demo
+    ports:
+      - "8080:8080"
+    command: master.sh
+    environment:
+      DNS_WAIT: 60s
+      MASTER: spark://master.spark:7077
+      HOSTNAME: master.spark
+      SPARK_CONF_DIR: /conf
+      SPARK_PUBLIC_DNS: master.spark
+    logging:
+      driver: awslogs
+      options:
+        awslogs-group: spark-master
+        awslogs-region: ${REGION}
+        awslogs-stream-prefix: spark-master
+    

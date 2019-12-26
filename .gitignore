@@ -1,0 +1,9 @@
+.idea/
+*.zip
+*.jar
+temp.yml
+temp-*.yml
+nohup.out
+*.log
+.iml
+
