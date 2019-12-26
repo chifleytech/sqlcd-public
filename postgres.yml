@@ -1,0 +1,21 @@
+version: '3'
+services:
+  postgres.db:
+    image: chifleytech/postgres-demo
+    environment:
+    - POSTGRES_PASSWORD=password
+    ports:
+    - "5433:5432"
+  pgadmin.db:
+    image: dpage/pgadmin4
+    depends_on:
+    - postgres.db
+    ports:
+    - "8083:80"
+    environment:
+    - PGADMIN_DEFAULT_EMAIL=admin@localhost
+    - PGADMIN_DEFAULT_PASSWORD=password
+networks:
+  default:
+    external:
+      name: app_default

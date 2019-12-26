@@ -1,0 +1,8 @@
+version: '3'
+services:
+  service.sqlcd:
+    volumes:
+      - ~/sqlcd-demo/sql-cd/conf:/root/conf
+      - ~/sqlcd-demo/sql-cd/data:/root/data
+      - ~/sqlcd-demo/sql-cd/logs:/root/logs
+      - ~/sqlcd-demo/sql-cd/drivers:/root/drivers

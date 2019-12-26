@@ -1,0 +1,21 @@
+version: '3'
+services:
+  master.spark:
+    volumes:
+      #  - ./conf/master:/conf
+      - ~/sqlcd-demo/spark/internal/hdfs:/tmp/hadoop-root
+      - ~/sqlcd-demo/spark/internal/hive:/tmp/hive
+      - ~/sqlcd-demo/spark/internal/master/spark-warehouse:/usr/spark-2.4.3/spark-warehouse
+      - ~/sqlcd-demo/spark/internal/master/data:/tmp/data
+      - ~/sqlcd-demo/spark/internal/master/events:/tmp/spark-events
+      - ~/sqlcd-demo/spark/internal/master/logs/spark:/usr/spark-2.4.3/logs
+      - ~/sqlcd-demo/spark/internal/master/logs/hadoop:/usr/hadoop-3.2.0/logs
+      - ~/sqlcd-demo/spark/data:/data
+      - ~/sqlcd-demo/spark/udf:/udf
+  worker.spark:
+    volumes:
+      - ~/sqlcd-demo/spark/internal/worker/conf:/conf
+      - ~/sqlcd-demo/spark/internal/worker/data:/tmp/data
+      - ~/sqlcd-demo/spark/internal/worker/logs:/usr/spark-2.4.3/logs
+      - ~/sqlcd-demo/spark/internal/worker/data:/data
+      - ~/sqlcd-demo/spark/internal/worker/udf:/udf

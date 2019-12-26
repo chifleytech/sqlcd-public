@@ -1,0 +1,6 @@
+.idea/
+*.iml
+/deploy/frontend/
+/deploy/backend/
+*.log
+temp*.yml

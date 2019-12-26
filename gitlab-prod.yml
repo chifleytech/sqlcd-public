@@ -1,0 +1,11 @@
+version: '3'
+services:
+  gitlab.vcs:
+    volumes:
+    - ~/sqlcd-demo/gitlab/config:/etc/gitlab
+    - ~/sqlcd-demo/gitlab/logs:/var/log/gitlab
+    - ~/sqlcd-demo/gitlab/data:/var/opt/gitlab
+networks:
+  default:
+    external:
+      name: app_default
