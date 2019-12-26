@@ -1,0 +1,38 @@
+version: '3'
+services:
+  master.spark:
+    image: chifleytech/spark
+    command: master.sh
+    hostname: master.spark
+    environment:
+      DNS_WAIT: 0s
+      MASTER: spark://master.spark:7077
+      HOSTNAME: master.spark
+      SPARK_CONF_DIR: /conf
+      SPARK_PUBLIC_DNS: master.spark
+    ports:
+      - 8084:8080
+      - 8085:4040
+      - 8086:18080
+      - 8087:9870
+      - 5434:10000
+  worker.spark:
+    image: chifleytech/spark
+    command: worker.sh
+    hostname: worker.spark
+    environment:
+      MASTER: spark://master.spark:7077
+      SPARK_CONF_DIR: /conf
+      SPARK_WORKER_CORES: 2
+      SPARK_WORKER_MEMORY: 7g
+      SPARK_WORKER_PORT: 8881
+      SPARK_WORKER_WEBUI_PORT: 8081
+      SPARK_PUBLIC_DNS: worker.spark
+    ports:
+      - 8088:8081
+    depends_on:
+      - master.spark
+networks:
+  default:
+    external:
+      name: app_default

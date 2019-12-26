@@ -1,0 +1,16 @@
+version: '3'
+services:
+  gitlab.vcs:
+    hostname: localhost
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://localhost:8082/'
+        gitlab_rails['gitlab_shell_ssh_port'] = 2222
+    image: gitlab/gitlab-ce
+    ports:
+    - "2222:2222"
+    - "8082:8082"
+networks:
+  default:
+    external:
+      name: app_default

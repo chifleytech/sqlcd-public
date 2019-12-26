@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  postgres.db:
+    volumes:
+    - ~/sqlcd-demo/postgres/data:/data
+    - ~/sqlcd-demo/postgres/db:/var/lib/postgresql/data
+    - ~/sqlcd-demo/postgres/udf:/udf
+  pgadmin.db:
+    volumes:
+    - ~/sqlcd-demo/pgadmin:/var/lib/pgadmin

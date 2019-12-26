@@ -1,0 +1,28 @@
+version: '3'
+services:
+  service.sqlcd:
+    container_name: sqlcd-service
+    image: chifleytech/sqlcd-service
+    environment:
+    - HOSTNAME=localhost
+    - TZ=Australia/Sydney
+    - LOG_LEVEL=INFO
+    - SQLCD_HOME=/root
+    - JRE_HOME=/usr/local/openjdk-8/jre
+    ports:
+    - "9090:9090"
+  app.sqlcd:
+    container_name: sqlcd-ui
+    image: chifleytech/sqlcd-ui
+    depends_on:
+    - service.sqlcd
+    environment:
+      - PROXY_LISTEN_PORT=80
+      - PROXY_BACKEND=service.sqlcd:7080
+      - PROXY_FRONTEND=localhost:5000
+    ports:
+    - "8081:80"
+networks:
+  default:
+    external:
+      name: app_default
