@@ -1,0 +1,9 @@
+version: 1
+task_definition:
+  task_size:
+    cpu_limit: ${CPU}
+    mem_limit: ${MEMORY}
+  ecs_network_mode: awsvpc
+run_params:
+  network_configuration:
+    awsvpc_configuration:

@@ -1,0 +1,32 @@
+version: '2'
+services:
+  db:
+    image: chifleytech/postgres-demo
+    environment:
+      - POSTGRES_PASSWORD=password
+    logging:
+      driver: awslogs
+      options:
+        awslogs-group: postgres
+        awslogs-region: ${REGION}
+        awslogs-stream-prefix: postgres
+    volumes:
+      - /home/ec2-user/data/postgres/data:/data
+      - /home/ec2-user/data/postgres/db:/var/lib/postgresql/data
+      - /home/ec2-user/data/postgres/udf:/udf
+    shm_size: '1gb'
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - "80:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@localhost
+      - PGADMIN_DEFAULT_PASSWORD=password
+    logging:
+      driver: awslogs
+      options:
+        awslogs-group: pgadmin
+        awslogs-region: ${REGION}
+        awslogs-stream-prefix: pgadmin
+    volumes:
+      - /home/ec2-user/data/pgadmin:/var/lib/pgadmin
