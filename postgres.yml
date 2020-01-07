@@ -7,7 +7,7 @@ services:
     ports:
     - "5433:5432"
   pgadmin.db:
-    image: dpage/pgadmin4
+    image: chifleytech/pgadmin-demo
     depends_on:
     - postgres.db
     ports:
