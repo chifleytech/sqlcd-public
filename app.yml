@@ -9,6 +9,7 @@ services:
     - LOG_LEVEL=INFO
     - SQLCD_HOME=/root
     - JRE_HOME=/usr/local/openjdk-8/jre
+    - GIT_POLL_TIME=5000    
     ports:
     - "9090:9090"
   app.sqlcd:
