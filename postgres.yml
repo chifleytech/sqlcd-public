@@ -12,7 +12,7 @@ services:
         awslogs-region: ${REGION}
         awslogs-stream-prefix: postgres
   pgadmin:
-    image: dpage/pgadmin4
+    image: chifleytech/pgadmin-demo
     ports:
       - "80:80"
     environment:
