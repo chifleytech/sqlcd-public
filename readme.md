@@ -6,7 +6,7 @@ This tutorial will walk you through setting up a cloud data platform using SqlCD
 * PgAdmin
 * Apache Spark 2.4.4, Hive, HDFS 3.2.1 with existing demo data
 
-Please read the [accompanying tutorials](https://support.sqlcd.com/hc/en-us/articles/360034593972) for this demo.
+Please read the [accompanying tutorials](https://support.sqlcd.com/hc/en-us/articles/360034551572) for this demo.
 
 You can include either Postgres or Spark or both.
 
