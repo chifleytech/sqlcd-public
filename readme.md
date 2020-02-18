@@ -139,16 +139,16 @@ Note: If you change regions, you will need to re-do step 2.
 
 Start GitLab, SqlCD, and Postgres. You may start these in separate shells
 ```
-./compose-up.sh gitlab vcs 2048 8192
-./compose-up.sh app sqlcd 2048 8192
-./compose-up.sh postgres db 2048 8192
+./compose-up.sh gitlab vcs 2048 8192 &
+./compose-up.sh app sqlcd 2048 8192 &
+./compose-up.sh postgres db 2048 8192 &
 echo 'Started services'
 ```
 
 Optionally start Spark instead of (or also with) Postgres. Start the worker service after the master service has successfully started.
 ```
-./compose-up.sh master spark 1024 2048
-./compose-up.sh worker spark 4096 8192
+./compose-up.sh master spark 1024 2048 &
+./compose-up.sh worker spark 4096 8192 &
 echo 'Started spark'
 ```
 _Please edit SPARK_WORKER_CORES and SPARK_WORKER_MEMORY values in worker.yml to reflect the CPU cores and memory allocated_
